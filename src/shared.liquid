@@ -4,19 +4,20 @@
 {% assign screen = trmnl.plugin_settings.custom_fields_values.view %}
 
 <style>
-  .relative {
+  /* Scoped to #trmnl-spotify so these don't leak into other plugins in a mashup */
+  #trmnl-spotify .relative {
     position: relative;
   }
 
-  .absolute {
+  #trmnl-spotify .absolute {
     position: absolute;
   }
 
-  .bold {
+  #trmnl-spotify .bold {
     font-weight: 800;
   }
 
-  .rank {
+  #trmnl-spotify .rank {
     top: 5px;
     left: 5px;
   }

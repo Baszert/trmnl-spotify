@@ -81,11 +81,11 @@
       {% if t.album.images.size > 1 %}
       <img src="{{ t.album.images[1].url }}" class="rounded--xsmall image-dither w--16">
       {% elsif t.album.images.size > 0 %}
-      <img src="{{ t.album.images[0].url }}" class="rounded--xsmall image-dither">
+      <img src="{{ t.album.images[0].url }}" class="rounded--xsmall image-dither w--16">
+      {% endif %}
     </div>
-    {% endif %}
-    {% endfor %}
-    {% endif %}
   </div>
+  {% endfor %}
+  {% endif %}
 </div>
 {% endif %}
