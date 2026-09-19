@@ -1,0 +1,59 @@
+---
+strategy: polling
+no_screen_padding: 'yes'
+dark_mode: 'no'
+static_data: ''
+polling_verb: get
+framework_version: 2.3.7
+serverless_language: ''
+polling_url: "https://api.spotify.com/v1/me/top/tracks?time_range={{ range }}&limit=5\r\nhttps://api.spotify.com/v1/me/top/artists?time_range={{ range }}&limit=6\r\nhttps://api.spotify.com/v1/me/player/recently-played?limit=1"
+polling_headers: authorization=Bearer {{ oauth_access_token }}
+polling_body: ''
+id: 247528
+oauth_enabled: 'true'
+oauth_pkce_enabled: 'yes'
+oauth_authorize_url: https://accounts.spotify.com/authorize
+oauth_token_url: https://accounts.spotify.com/api/token
+oauth_scopes: user-read-email,user-top-read,user-read-recently-played
+oauth_scope_separator: ''
+oauth_refresh_url: ''
+oauth_auth_params: ''
+oauth_token_headers: ''
+oauth_token_site: https://api.spotify.com
+oauth_token_params: ''
+oauth_token_request_auth_method: body
+oauth_body_format: form
+oauth_token_response_metadata: ''
+oauth_authorization_method: body
+oauth_refresh_params: ''
+oauth_token_field_name: ''
+oauth_expiry_field_name: ''
+oauth_expiry_strategy: expirein
+oauth_fixed_expiry_ms: ''
+custom_fields:
+- keyname: whatever
+  field_type: author_bio
+  name: Spotify Dashboard
+  category: analytics,entertainment
+  email_address: trmnl@achtnegen.nl
+  description: Show your top played songs, favorite artists, and when you use the TRMNL X, you'll see the last played song (before your screen synced). This plugin uses the TRMNL OAuth settings, so just log in to your Spotify account and enjoy the music. To use this Recipe, you need to create a <a href="https://developer.spotify.com/dashboard">developer account</a> at Spotify and register an App (5 user maximum per App).
+- keyname: range
+  field_type: select
+  name: Period
+  description: How long would you like to go back?
+  default: short_term
+  options:
+  - Last 4 weeks: short_term
+  - Last 6 months: medium_term
+  - Last year: long_term
+- keyname: view
+  field_type: select
+  name: View (on smaller screens)
+  description: What would you like to show?
+  default: top_played
+  options:
+  - Top played: top_played
+  - Favorite artists: favorite_artists
+name: Spotify
+description: Top played & Favorite artists
+refresh_interval: 720
