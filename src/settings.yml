@@ -4,7 +4,7 @@ no_screen_padding: 'yes'
 dark_mode: 'no'
 static_data: ''
 polling_verb: get
-framework_version: 2.3.7
+framework_version: 3.3.2
 serverless_language: ''
 polling_url: "https://api.spotify.com/v1/me/top/tracks?time_range={{ range }}&limit=5\r\nhttps://api.spotify.com/v1/me/top/artists?time_range={{ range }}&limit=6\r\nhttps://api.spotify.com/v1/me/player/recently-played?limit=1"
 polling_headers: authorization=Bearer {{ oauth_access_token }}
